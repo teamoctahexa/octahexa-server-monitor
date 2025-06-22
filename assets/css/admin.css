@@ -1,0 +1,194 @@
+/**
+ * File: assets/css/admin.css
+ * Description: Admin styles for OctaHexa Server Monitor plugin
+ * Version: 1.0.0
+ * 
+ * @package OctaHexa_Server_Monitor
+ */
+
+/**
+ * Dashboard Styles
+ */
+.oh-server-monitor-dashboard {
+    margin-top: 20px;
+}
+
+/**
+ * Stats Grid
+ */
+.oh-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+/**
+ * Stat Box
+ */
+.oh-stat-box {
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.oh-stat-box h3 {
+    margin: 0 0 15px 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: #23282d;
+}
+
+.oh-stat-value {
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 10px;
+    color: #23282d;
+}
+
+.oh-stat-meta {
+    font-size: 13px;
+    color: #666;
+}
+
+/**
+ * Stat Box States
+ */
+.oh-stat-box.oh-stat-normal {
+    border-color: #46b450;
+}
+
+.oh-stat-box.oh-stat-normal .oh-stat-value {
+    color: #46b450;
+}
+
+.oh-stat-box.oh-stat-warning {
+    border-color: #ffb900;
+    background-color: #fffdf5;
+}
+
+.oh-stat-box.oh-stat-warning .oh-stat-value {
+    color: #f56e28;
+}
+
+.oh-stat-box.oh-stat-critical {
+    border-color: #dc3232;
+    background-color: #fef5f5;
+}
+
+.oh-stat-box.oh-stat-critical .oh-stat-value {
+    color: #dc3232;
+}
+
+/**
+ * Charts Container
+ */
+.oh-charts-container {
+    margin-top: 30px;
+}
+
+.oh-chart-box {
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.oh-chart-box h3 {
+    margin: 0 0 20px 0;
+    font-size: 18px;
+    font-weight: 600;
+    color: #23282d;
+}
+
+#oh-resource-chart {
+    height: 400px;
+    max-height: 400px;
+}
+
+/**
+ * Logs Page
+ */
+.oh-logs-container {
+    margin-top: 20px;
+}
+
+.oh-alert-row {
+    background-color: #fef5f5;
+}
+
+.oh-alert-row .dashicons-warning {
+    color: #dc3232;
+}
+
+/**
+ * Responsive Design
+ */
+@media screen and (max-width: 782px) {
+    .oh-stats-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .oh-stat-value {
+        font-size: 28px;
+    }
+    
+    #oh-resource-chart {
+        height: 300px;
+    }
+}
+
+/**
+ * Loading State
+ */
+.oh-loading {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.oh-loading::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    margin: -10px 0 0 -10px;
+    border: 2px solid #f3f3f3;
+    border-top: 2px solid #23282d;
+    border-radius: 50%;
+    animation: oh-spin 1s linear infinite;
+}
+
+@keyframes oh-spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/**
+ * Settings Page
+ */
+.form-table th {
+    width: 250px;
+}
+
+.form-table input[type="number"] {
+    width: 100px;
+}
+
+.form-table input[type="email"] {
+    width: 100%;
+    max-width: 400px;
+}
+
+/**
+ * WordPress Admin Overrides
+ */
+.wp-admin .oh-server-monitor-dashboard select {
+    max-width: none;
+}
